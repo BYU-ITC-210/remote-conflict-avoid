@@ -45,3 +45,7 @@ pm2 logs
 pm2 restart all
 pm2 stop all
 ```
+
+## On the origins
+
+This project started out as a help queue and was modified to fit needs. If you find any references to help, help-queue, student, ta, zoom, in-class, or something else not relevant to a simple conflict-avoiding site, it's an artefact of legacy. You may suggest any changes by forking this project as your own, applying changes, and making a pull request here. Please test out any changes you make, to decrease the likelihood of bugs getting through.
