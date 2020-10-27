@@ -1,0 +1,53 @@
+<div id="app">
+
+  <h1>RDP Collision Prevention
+    <% if (admin) { %>
+    | Admin
+    <% } %>
+    | {{user.name}}
+  </h1>
+
+  <%- // include("help_list/instructions.ejs") %>
+  <%- include("help_list/machines.ejs") %>
+
+  <div v-if="set">
+    <div class="row">
+      <!-- <div class="list-container col l4 m6 s12">
+        <%- // include("help_list/passoff_list.ejs") %>
+      </div> -->
+
+      <div class="list-container col s12">
+        <%- include("help_list/help_list.ejs") %>
+      </div>
+
+
+      <!-- <div class="list-container col l6 m6 s12">
+        <%- // include("help_list/ta_list.ejs") %>
+      </div> -->
+
+    </div>
+  </div>
+
+  <div v-else>
+    <%- include("help_list/login.ejs") %>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h4>Currently being helped!</h4>
+      <p>You are currently being helped by <strong> {{ ta.name }} </strong> </p>
+      <p v-if="user.in_lab && ta.in_lab">Because both you and the TA are in the lab, the TA <strong>{{ta.name}}</strong> will try and find you in the lab.</p>
+      <p v-else>You can join their Zoom meeting at <a target="_blank" :href="ta.zoom"> <strong> {{ ta.zoom }} </strong> </a>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect btn-flat">Close</a>
+    </div>
+  </div>
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="js/script.js"></script>

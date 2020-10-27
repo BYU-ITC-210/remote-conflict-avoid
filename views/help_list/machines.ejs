@@ -1,0 +1,13 @@
+<div class="container">
+  <h5>Machines</h5>
+  <ul class="show-list-dots">
+    <li v-for="machine in availableMachines">
+      <span v-if="machine.available">
+        {{ machine.name }}
+      </span>
+      <span v-else class="unavailable">
+        {{ machine.name }}
+      </span>
+    </li>
+  </ul>
+</div>

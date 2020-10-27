@@ -1,0 +1,159 @@
+:root {
+  --primary-text:         #000000 !important;
+  --primary-text-color:   #000000 !important;
+  --secondary-text:       #000000 !important;
+  --secondary-text-color: #000000 !important;
+}
+
+nav {
+  background-color: var(--primary);
+}
+
+.page-footer {
+  background-color: var(--primary);
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+  border-right-color: var(--secondary);
+  border-bottom-color: var(--secondary);
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+  background-color: var(--secondary-light);
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: var(--secondary-light);
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: var(--secondary);
+}
+
+.btn, .btn-large, .btn-small {
+  background-color: var(--secondary);
+}
+
+html {
+  background-color: var(--primary);
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.page-footer {
+  padding-top: 0;
+}
+
+.nav-container {
+  padding: 0px 15px;
+}
+
+.join {
+  background-color: inherit;
+  color: #039be5;
+  border: none;
+  cursor: pointer;
+}
+
+.subject {
+  color: grey;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext { /* black box of tooltip */
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  padding: 0px 5px;
+}
+
+.tooltip .tooltiptext::after { /* arrow beneath */
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.container.wide {
+  width: 90%;
+}
+
+.list-container.list-container {
+  padding: 0 4px;
+}
+
+.in-lab {
+  color: #777;
+}
+
+.in-lab::after {
+  content: "~";
+}
+
+.brand-logo-small.brand-logo-small {
+  left: unset;
+  transform: unset;
+}
+
+.show-list-dots.show-list-dots {
+  padding-left: 40px;
+}
+
+.show-list-dots.show-list-dots > li {
+  list-style-type: initial;
+}
+
+li.indicator-item.indicator-item.indicator-item {
+  background-color: var(--secondary-dark);
+}
+
+li.indicator-item.active.indicator-item.active {
+  background-color: var(--secondary-light);
+}
+
+#carousel {
+  height: 100px;
+}
+
+.unavailable {
+  color: #777;
+}

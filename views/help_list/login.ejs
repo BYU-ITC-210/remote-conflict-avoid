@@ -1,0 +1,7 @@
+<form class="row" v-on:submit.prevent="setup">
+  <input required v-model="user.name" placeholder="Full Name">
+  <button type="submit" class="btn waves-effect">Link</button>
+</form>
+<div v-if="error_message">
+  {{ error_message }}
+</div>

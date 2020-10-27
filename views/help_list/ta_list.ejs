@@ -1,0 +1,24 @@
+<ul class="collection with-header">
+  <li class="collection-header">
+    <h4>TAs online</h4>
+  </li>
+
+  <li v-for="_admin in admins" class="collection-item">
+    <span v-if="_admin.in_lab" class="in-lab">{{ _admin.name }}</span>
+    <span v-else>{{ _admin.name }}</span>
+    <% if (admin) { %>
+    <a class="secondary-content" href="#" v-on:click="adminRemoveAdmin(_admin.name)">
+      remove
+    </a>
+    <% } %>
+  </li>
+
+
+
+  <% if (admin) { %>
+  <li v-if="!onAdminList" class="collection-item">
+    <a href="#" v-on:click="joinAdmin()">Admin: Join List Please</a>
+  </li>
+  <% } %>
+
+</ul>

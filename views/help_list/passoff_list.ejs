@@ -1,0 +1,30 @@
+<ul class="collection with-header">
+  <li class="collection-header">
+    <h4>Passoff List</h4>
+  </li>
+
+  <li v-for="passoffUser in passoffUsers" class="collection-item">
+    <span v-if="admin && passoffUser.in_lab" class="in-lab">{{ passoffUser.name }}</span>
+    <span v-else>{{ passoffUser.name }}</span>
+    <% if (admin) { %>
+    <a class="secondary-content" href="#" v-on:click="adminRemovePassoff(passoffUser.name)">
+      remove
+    </a>
+
+    <% } else { %>
+
+    <a v-if="passoffUser.name === user.name" class="secondary-content" href="#" v-on:click="removePassoff()">
+      remove
+    </a>
+
+    <% } %>
+
+  </li>
+
+  <% if (!admin) { %>
+  <li v-if="!onList" class="collection-item">
+    <a href="#" v-on:click="joinPassoff()">Join Passoff List</a>
+  </li>
+  <% } %>
+
+</ul>

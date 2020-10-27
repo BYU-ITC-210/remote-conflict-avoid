@@ -1,0 +1,22 @@
+<h1>RDP Collision Prevention</h1>
+
+<!-- login for TAs -->
+
+<div id="app">
+
+  <form class="row" v-on:submit.prevent="login">
+    <input required type="password" v-model="nonce" placeholder="Code">
+    <input required v-model="zoom" placeholder="Zoom Personal Meeting Id (i.e. https://byu.zoom.us/j/0123456789)">
+    <button type="submit" class="btn waves-effect">Log in</button>
+  </form>
+  <a href="tutorial">How do I get my Zoom Meeting Id?</a>
+  <div v-if="error">
+    {{ error_message }}
+  </div>
+
+</div> <!-- app -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script src="js/login.js"></script>

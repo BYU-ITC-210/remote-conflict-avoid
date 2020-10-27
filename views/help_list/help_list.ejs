@@ -1,0 +1,55 @@
+<ul class="collection with-header">
+  <li class="collection-header">
+    <h4>Machine List</h4>
+  </li>
+
+  <li v-for="helpUser in helpUsers" class="collection-item">
+    <div>{{ helpUser.name }}</div>
+
+    <div>
+        {{ helpUser.subject }}
+    </div>
+
+    <div>
+        {{ helpUser.date }}
+    </div>
+    <div>
+      <% if (admin) { %>
+      <a href="#" v-on:click="adminRemoveHelp(helpUser.name)">remove</a>
+      <% } else { %>
+      <a v-if="helpUser.name === user.name" href="#" v-on:click="removeHelp()">
+        remove
+      </a>
+      <% } %>
+    </div>
+  </li>
+
+  <% if (!admin) { %>
+  <li v-if="!onList" class="collection-item">
+    <!-- <a href="#" v-on:click="joinHelp()">Join Help List</a> -->
+    <form class="row" v-on:submit.prevent="joinHelp">
+      
+      <select v-model="user.subject" class="browser-default">
+        <option value="" disabled selected>Choose your option</option>
+        <option v-for="machine in availableMachines.filter(machine => machine.available)" :value="machine.name">
+          {{ machine.name }}
+        </option>
+        <!-- <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option> -->
+      </select>
+
+
+      <!-- <select v-model="user.subject">
+        <option v-for="machine in availableMachines">
+          {{ machine.name }}
+        </option>
+      </select> -->
+      <!-- <input type="hidden" required v-model="user.subject"> -->
+      <span style="visibility: hidden;">{{ user.subject }}</span>
+      <button class="join col s6" type="submit">Claim Computer</button>
+    </form>
+  </li>
+  <% } %>
+
+</ul>
