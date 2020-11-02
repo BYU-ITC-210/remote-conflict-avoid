@@ -1,4 +1,4 @@
-# Remote Connectinos Conflict Avoidance
+# Remote Connections Conflict Avoidance
 This project is only as good as a whiteboard, in terms of security and usefulness. If no one uses this, it won't stop conflicts. If a student were to try very hard, they could get pseudo-admin access and remove everyone from the list (rather like erasing the whole list from a whiteboard, don't you think?).
 
 ## Environment keys:
